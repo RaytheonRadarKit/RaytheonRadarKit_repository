@@ -57,7 +57,7 @@ void loop() {
 	// Runs the function to be used in section2
         //Section2();
 	// Runs the function to be used in section3
-	//    Section3();
+	//Section3();
 }
 /*******************************************************************************************************/
 // Calculate the distance to the target (cm)

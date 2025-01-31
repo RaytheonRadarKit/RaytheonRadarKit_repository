@@ -115,7 +115,7 @@ void straight_ahead() {
 
 void scan_side_to_side() {            		
   for (int angle=30; angle<=150; angle += Servo_Step) {  // Sweep from 30 to 150 degrees in steps		
-  myservo.write(angle);                       // Send servo to angle
+  myservo.write(UpsideDown-angle);                       // Send servo to angle
   delay(200);                                            // Delay to allow servo to move	
   int distance = ping_target();                          // Calculate the distance to target
   Serial.print(":");                                     // Send data out of Serial Port
@@ -127,7 +127,7 @@ void scan_side_to_side() {
   Serial.println(".");	                                 // to the data output called: "CR" and "LF"        
   }
   for (int angle=150; angle>=30; angle -= Servo_Step) {  // Sweep from 150 to 30 degrees in steps		
-  myservo.write(angle);                       // Send servo to angle
+  myservo.write(UpsideDown-angle);                       // Send servo to angle
   delay(200);                                            // Delay to allow servo to move	
   int distance = ping_target();                          // Calculate the distance to target
   Serial.print(":");                                     // Send data out of Serial Port

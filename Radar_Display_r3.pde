@@ -225,13 +225,13 @@ void drawText() { // draws the texts on the screen
   pushMatrix();
   translate(961+960*cos(radians(30)), 982-960*sin(radians(30)));
   rotate(-radians(-60));
-  text("150°", 0, 0);
+  text("30°", 0, 0);
   popMatrix();  // e.g. was resetMatrix(); here
 
   pushMatrix();
   translate(954+960*cos(radians(60)), 984-960*sin(radians(60)));
   rotate(-radians(-30));
-  text("120°", 0, 0);
+  text("60°", 0, 0);
   popMatrix();
 
   pushMatrix();
@@ -243,13 +243,13 @@ void drawText() { // draws the texts on the screen
   pushMatrix();
   translate(935+960*cos(radians(120)), 1003-960*sin(radians(120)));
   rotate(radians(-30));
-  text("60°", 0, 0);
+  text("120°", 0, 0);
   popMatrix();
 
   pushMatrix();
   translate(940+960*cos(radians(150)), 1018-960*sin(radians(150)));
   rotate(radians(-60));
-  text("30°", 0, 0);
+  text("150°", 0, 0);
   popMatrix();
 
   popMatrix();

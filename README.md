@@ -49,4 +49,6 @@ Set the `select` variable in the Arduino sketch to choose a mode:
 - `2` = Beam Width  
 - `3` = Sweep Side-to-Side 
 - `4` = Jammer Effect  
-- `5` = Jammer Display  
+- `5` = Jammer Display
+
+**FOR FURTHER INSTRUCTIONS AND EXPLANATIONS, SEE THE USER GUIDE**

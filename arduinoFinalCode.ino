@@ -1,5 +1,5 @@
 //  File Name:    Ultrasonic_Signal_Processing.ino
-//  Edited:       03/17/2025
+//  Edited:       03/18/2025
 //  Author:       David L. Garcia
 //  Created:      1-Jan-2025
 //
@@ -79,7 +79,7 @@ void setup() {
 /**************************************/
 
 void loop() {
-  int select = 1;   // Set select = 1 for "straight ahead", 2 for "Beam Width", 3 for "Scan-Side-to-Side", 4 for "Jammer", 5 for "Jammer display"
+  int select = 4;   // Set select = 1 for "straight ahead", 2 for "Beam Width", 3 for "Scan-Side-to-Side", 4 for "Jammer", 5 for "Jammer display"
   switch (select) {
     case 1:
       straightAhead();
@@ -176,21 +176,40 @@ void scanSideToSide() {  // Sweep from 30 to 150 degrees
   }
 }
 
-void jammer() {
-  myServo.write(abs(90 - upsideDown));  // Set servo to 90 degrees
-  delay(200);                           // Delay to allow servo to move
-  int distance = pingTarget();           // Calculate the distance to target using the time of echo
-  Serial.print(":");
-  Serial.print(90);                      // Send data out of Serial Port
-  Serial.print(",");
-  Serial.print(distance);
-  Serial.print(";");
-  Serial.print(0);  
-  Serial.println("_");
-  Serial.print(0);
-  Serial.print("/");
-  Serial.print(numPings);  
-  Serial.println(".");
+void jammer() {  // Sweep from 30 to 150 degrees
+  for (int angle = 30; angle <= 150; angle += servoStep) {
+    myServo.write(abs(angle - upsideDown)); // Send servo to angle
+    delay(100);                             // Delay to allow servo to move
+    int distance = pingTarget();            // Calculate the distance to target
+    Serial.print(":");
+    Serial.print(angle);
+    Serial.print(",");
+    Serial.print(distance);
+    Serial.print(";");
+    Serial.print(0);  
+    Serial.println("_");
+    Serial.print(0);
+    Serial.print("/");
+    Serial.print(numPings);  
+    Serial.println(".");
+  }
+
+  for (int angle = 150; angle >= 30; angle -= servoStep) {  // Sweep from 150 to 30 degrees
+    myServo.write(abs(angle - upsideDown));                  // Send servo to angle
+    delay(100);                                              // Delay to allow servo to move
+    int distance = pingTarget();                              // Calculate the distance to target
+    Serial.print(":");
+    Serial.print(angle);
+    Serial.print(",");
+    Serial.print(distance);
+    Serial.print(";");
+    Serial.print(0);  
+    Serial.println("_");
+    Serial.print(0);
+    Serial.print("/");
+    Serial.print(numPings);  
+    Serial.println(".");
+  }
 }
 
 void jammerDisplay() {

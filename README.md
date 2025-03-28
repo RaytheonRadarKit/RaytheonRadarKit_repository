@@ -52,4 +52,4 @@ Set the `select` variable in the Arduino sketch to choose a mode:
 - `5` = Jammer Display
 
 
-**FOR FURTHER INSTRUCTIONS AND EXPLANATIONS, SEE THE USER GUIDE**
+**FOR FURTHER INSTRUCTIONS AND EXPLANATIONS, SEE THE USER-TEACHER GUIDE**

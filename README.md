@@ -53,3 +53,7 @@ Set the `select` variable in the Arduino sketch to choose a mode:
 
 
 **FOR FURTHER INSTRUCTIONS AND EXPLANATIONS, SEE THE USER-TEACHER GUIDE**
+
+
+This is the url to the GitHub Repository!
+https://github.com/RaytheonRadarKit/RaytheonRadarKit_repository.git
